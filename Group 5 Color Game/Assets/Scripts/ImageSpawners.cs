@@ -32,6 +32,7 @@ public class ImageSpawners : MonoBehaviour
                     if (iZero == false)
                     {
                         Instantiate(images[0],pos, Quaternion.identity);
+                        iZero = true;
                         //images.RemoveAt(0);
                         //++p;
   
