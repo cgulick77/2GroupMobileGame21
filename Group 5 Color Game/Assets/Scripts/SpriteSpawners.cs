@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,14 +9,17 @@ public class SpriteSpawners : MonoBehaviour
     public List<int> numbers;
     public int maxSpawnPoints, selectedSp, i, selectedImages, randomSpawnPoints, p;
     public bool cZero,cOne,cTwo,cThree,cFour,cFive, iZero,iOne,iTwo,iThree,iFour,iFive;
-    private Vector3 cZeroPos, cOnePos, cTwoPos, cThreePos, cFourPos, cFivePos;
+    private Vector3 pos, cZeroPos, cOnePos, cTwoPos, cThreePos, cFourPos, cFivePos;
     private GameObject sP, imagesP;
     private ImageSpawners imageSpawnersScript;
+    
     // Start is called before the first frame update
     void Start()
     {
        SpawnPointGeneration();
-       imageSpawnersScript = FindObjectOfType<ImageSpawners>();
+       //SpriteSpawn(pos);
+       //imageSpawnersScript = GameObject.Find("Image Sets").GetComponent<ImageSpawners>();
+
 
     }
 
@@ -43,7 +46,7 @@ public class SpriteSpawners : MonoBehaviour
                     {
                         //Vector3 cZeroPos;
                         
-                        
+                        //int CZeroVal = 0;
                         spawnPoints[0].SetActive(true);
                         cZeroPos = spawnPoints[0].transform.position;
                         cZero = true;
@@ -52,6 +55,7 @@ public class SpriteSpawners : MonoBehaviour
                         SpriteSpawn(cZeroPos);
 
                         ++i;
+                        //++p;
                     }
                     break;
                     
@@ -60,6 +64,7 @@ public class SpriteSpawners : MonoBehaviour
                     {
                         //Vector3 cOnePos;
                         
+                        //int cOneVal = 1;
                         spawnPoints[1].SetActive(true);
                         cOnePos = spawnPoints[1].transform.position;
                         cOne = true;
@@ -68,6 +73,7 @@ public class SpriteSpawners : MonoBehaviour
                         SpriteSpawn(cOnePos);
 
                         ++i;
+                        //++p;
                     }
 
                     break;
@@ -76,7 +82,7 @@ public class SpriteSpawners : MonoBehaviour
                     {
                         //Vector3 cTwoPos;
                         
-                        
+                        //int cTwoVal = 2;
                         spawnPoints[2].SetActive(true);
                         cTwoPos = spawnPoints[2].transform.position;
                         cTwo = true;
@@ -85,6 +91,7 @@ public class SpriteSpawners : MonoBehaviour
                         SpriteSpawn(cTwoPos);
   
                         ++i;
+                        //++p;
                     }
                     
                     break;
@@ -93,7 +100,7 @@ public class SpriteSpawners : MonoBehaviour
                     {
                         //Vector3 cThreePos;
                         
-                        
+                        //int cThreeVal = 3;
                         spawnPoints[3].SetActive(true);
                         cThreePos = spawnPoints[3].transform.position;
                         cThree = true;
@@ -102,6 +109,7 @@ public class SpriteSpawners : MonoBehaviour
                         SpriteSpawn(cThreePos);
 
                         ++i;
+                        //++p;
                     }
                      
                     break;
@@ -110,7 +118,7 @@ public class SpriteSpawners : MonoBehaviour
                     {
                         //Vector3 cFourPos;
                         
-                        
+                        //int cFourVal = 4;
                         spawnPoints[4].SetActive(true);
                         cFourPos = spawnPoints[4].transform.position;
                         cFour = true;
@@ -119,6 +127,7 @@ public class SpriteSpawners : MonoBehaviour
                         SpriteSpawn(cFourPos);
 
                         ++i;
+                        //++p;
                     }
                      
                     break;
@@ -126,7 +135,7 @@ public class SpriteSpawners : MonoBehaviour
                      if (cFive == false)
                     {
                         //Vector3 cFivePos;
-                        
+                        //int CFiveVal = 5;
                         spawnPoints[5].SetActive(true);
                         cFivePos = spawnPoints[5].transform.position;
                         //imageSpawnersScript.SpriteSpawn(cFivePos);
@@ -135,6 +144,7 @@ public class SpriteSpawners : MonoBehaviour
                         SpriteSpawn(cFivePos);
 
                         ++i;
+                        //++p;
                     }
                     break;
                   
@@ -142,8 +152,8 @@ public class SpriteSpawners : MonoBehaviour
             
             
             
-            Debug.Log(i);
-            //Debug.Log(randomSpawnPoints);
+            //Debug.Log(i);
+            Debug.Log(randomSpawnPoints);
         }
         
     }
@@ -152,8 +162,9 @@ public class SpriteSpawners : MonoBehaviour
 
        public void SpriteSpawn(Vector3 pos)
     {
-        
             
+            //while (p < maxSpawnPoints)
+            {
                 int randomImages = Random.Range(0,images.Count);
                 imagesP = images[randomImages];
                 
@@ -164,11 +175,14 @@ public class SpriteSpawners : MonoBehaviour
                     {
                         Instantiate(images[0],pos, Quaternion.identity);
                         //images.RemoveAt(0);
-                        //++p;
+                        
                         iZero = true;
-                        
-                        
-                        
+                        ++p;
+                
+                    }
+                    else 
+                    {
+                          SpriteSpawn(pos);
                     }
                         break;
                     case 1:
@@ -178,7 +192,11 @@ public class SpriteSpawners : MonoBehaviour
                         //images.RemoveAt(1);
                         iOne = true;
                         
-                        //++p;
+                        ++p;
+                    }
+                    else 
+                    {
+                          SpriteSpawn(pos);
                     }
                         break;
                     case 2:
@@ -188,7 +206,11 @@ public class SpriteSpawners : MonoBehaviour
                         //images.RemoveAt(2);
                         iTwo = true;
                         
-                        //++p;
+                        ++p;
+                    }
+                    else 
+                    {
+                          SpriteSpawn(pos);
                     }
                         break;
                     case 3:
@@ -198,7 +220,11 @@ public class SpriteSpawners : MonoBehaviour
                         //images.RemoveAt(3);
                         iThree = true;
                         
-                        //++p;
+                        ++p;
+                    }
+                    else 
+                    {
+                          SpriteSpawn(pos);
                     }
                         break;
                     case 4:
@@ -208,7 +234,11 @@ public class SpriteSpawners : MonoBehaviour
                         //images.RemoveAt(4);
                         iThree = true;
                         
-                        //++p;
+                        ++p;
+                    }
+                    else 
+                    {
+                          SpriteSpawn(pos);
                     }
                         break;
                     case 5:
@@ -218,14 +248,20 @@ public class SpriteSpawners : MonoBehaviour
                         //images.RemoveAt(5);
                         iFive = true;
                         
-                        //++p;
+                        ++p;
+                    }
+                    else 
+                    {
+                          SpriteSpawn(pos);
                     }
                         break;
+               
                    
                 }
-
+            }
+        //Debug.Log(randomSpawnPoints);
             
-    }
+        }
 }
 
 

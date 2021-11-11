@@ -7,6 +7,7 @@ public class ImageSpawners : MonoBehaviour
     public List<GameObject>  images;
     private GameObject imagesP;
     public bool iZero,iOne,iTwo,iThree,iFour,iFive,iSix;
+    private Vector3 pos;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,7 @@ public class ImageSpawners : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        //SpriteSpawn(pos);
     }
 
     public void SpriteSpawn(Vector3 pos)
