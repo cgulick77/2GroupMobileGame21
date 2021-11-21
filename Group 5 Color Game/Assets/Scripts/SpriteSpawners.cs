@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class SpriteSpawners : MonoBehaviour
 {
-    public GameObject [] spawnPoints;
+    public GameObject [] spawnPoints, menuSpawnPoints;
     public List<GameObject>  images;
     public List<int> numbers;
-    public int maxSpawnPoints, selectedSp, i, selectedImages, randomSpawnPoints, p;
+    public int maxSpawnPoints, selectedSp, i, selectedImages, randomSpawnPoints, p, menuBox;
     public bool cZero,cOne,cTwo,cThree,cFour,cFive, iZero,iOne,iTwo,iThree,iFour,iFive;
-    private Vector3 pos, cZeroPos, cOnePos, cTwoPos, cThreePos, cFourPos, cFivePos;
+    private Vector3 pos, cZeroPos, cOnePos, cTwoPos, cThreePos, cFourPos, cFivePos, iconOne, iconeTwo, iconeThree, iconeFour, iconeFive, iconeSix, activatedPos;
     private GameObject sP, imagesP;
     private ImageSpawners imageSpawnersScript;
     
@@ -17,12 +17,15 @@ public class SpriteSpawners : MonoBehaviour
     void Start()
     {
        SpawnPointGeneration();
+       MenuBar();
        //SpriteSpawn(pos);
        //imageSpawnersScript = GameObject.Find("Image Sets").GetComponent<ImageSpawners>();
-
+        activatedPos = iconOne;
 
     }
-
+    /* This scripts works by using 3 arrays. 
+    1 - The first part of the script activates 4 random points of the possible 6 possible spawn points, 
+    2- It then choses which of the possible 4 images in the second array of 6 possible to spawn in those 4 spawn points  */
     // Update is called once per frame
     void Update()
     {
@@ -174,6 +177,7 @@ public class SpriteSpawners : MonoBehaviour
                     if (iZero == false)
                     {
                         Instantiate(images[0],pos, Quaternion.identity);
+                        Instantiate(images[0],activatedPos,Quaternion.identity);
                         //images.RemoveAt(0);
                         
                         iZero = true;
@@ -189,6 +193,7 @@ public class SpriteSpawners : MonoBehaviour
                     if (iOne == false)
                     {
                         Instantiate(images[1],pos, Quaternion.identity);
+                        Instantiate(images[1],activatedPos,Quaternion.identity);
                         //images.RemoveAt(1);
                         iOne = true;
                         
@@ -203,6 +208,7 @@ public class SpriteSpawners : MonoBehaviour
                     if (iTwo == false)
                     {
                         Instantiate(images[2],pos, Quaternion.identity);
+                        Instantiate(images[2],activatedPos,Quaternion.identity);
                         //images.RemoveAt(2);
                         iTwo = true;
                         
@@ -217,6 +223,7 @@ public class SpriteSpawners : MonoBehaviour
                     if (iThree == false)
                     {
                         Instantiate(images[3],pos, Quaternion.identity);
+                        Instantiate(images[3],activatedPos,Quaternion.identity);
                         //images.RemoveAt(3);
                         iThree = true;
                         
@@ -231,6 +238,7 @@ public class SpriteSpawners : MonoBehaviour
                     if(iFour == false)
                     {
                         Instantiate(images[4],pos, Quaternion.identity);
+                        Instantiate(images[4],activatedPos,Quaternion.identity);
                         //images.RemoveAt(4);
                         iThree = true;
                         
@@ -245,6 +253,7 @@ public class SpriteSpawners : MonoBehaviour
                     if (iFive == false)
                     {
                         Instantiate(images[5],pos, Quaternion.identity);
+                        Instantiate(images[5],activatedPos,Quaternion.identity);
                         //images.RemoveAt(5);
                         iFive = true;
                         
@@ -260,7 +269,55 @@ public class SpriteSpawners : MonoBehaviour
                 }
             }
         //Debug.Log(randomSpawnPoints);
-            
+        }
+
+        public void MenuBar ()
+        {
+            // Have one of the 6 be enabled
+            // Ounce a image has intantited, instantiate another on the one thats enabled.
+            // ounce the point has an image disable then set the other one enabled
+            // use int and switch statement
+            menuBox = 0;
+    
+            iconOne = menuSpawnPoints[0].transform.position;
+            iconeTwo = menuSpawnPoints[1].transform.position;
+            iconeThree = menuSpawnPoints[2].transform.position;
+            iconeFour = menuSpawnPoints[3].transform.position;
+            iconeFive = menuSpawnPoints[4].transform.position;
+            iconeSix = menuSpawnPoints[5].transform.position;
+
+            switch (menuBox)
+            {
+                case 0:
+                activatedPos = iconOne;
+                menuBox = 1;
+                break;
+
+                case 1:
+                activatedPos = iconeTwo;
+                menuBox = 2;
+                break;
+
+                case 2:
+                activatedPos = iconeThree;
+                menuBox = 3;
+                break;
+
+                case 3:
+                activatedPos = iconeFour;
+                menuBox = 4;
+                break;
+
+                case 4:
+                activatedPos = iconeFive;
+                menuBox = 5;
+                break;
+
+                case 5:
+                activatedPos = iconeSix;
+                menuBox = 6;
+                break;
+            }
         }
 }
 

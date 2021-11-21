@@ -14,8 +14,8 @@ public class StayInBounds : MonoBehaviour
     void Update()
     {
         transform.position = new Vector3(
-            Mathf.Clamp(target.position.x, 49.2f, -59),
-            Mathf.Clamp(target.position.y, 8f, -6.4f),
+            Mathf.Clamp(target.position.x, 82.8f, -27.8f),
+            Mathf.Clamp(target.position.y, 14.8f, -5.4f),
             transform.position.z);
 
 
