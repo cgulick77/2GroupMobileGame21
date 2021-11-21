@@ -8,8 +8,8 @@ public class SpriteSpawners : MonoBehaviour
     public List<GameObject>  images;
     public List<int> numbers;
     public int maxSpawnPoints, selectedSp, i, selectedImages, randomSpawnPoints, p, menuBox;
-    public bool cZero,cOne,cTwo,cThree,cFour,cFive, iZero,iOne,iTwo,iThree,iFour,iFive;
-    private Vector3 pos, cZeroPos, cOnePos, cTwoPos, cThreePos, cFourPos, cFivePos, iconOne, iconeTwo, iconeThree, iconeFour, iconeFive, iconeSix, activatedPos;
+    public bool cZero,cOne,cTwo,cThree,cFour,cFive, cSix, cSeven, cEight, cNine, cTen, iZero,iOne,iTwo,iThree,iFour,iFive;
+    private Vector3 pos, cZeroPos, cOnePos, cTwoPos, cThreePos, cFourPos, cFivePos, cSixPos, cSevenPos, cEightPos, cNinePos, cTenPos, iconOne, iconeTwo, iconeThree, iconeFour, iconeFive, iconeSix, activatedPos;
     private GameObject sP, imagesP;
     private ImageSpawners imageSpawnersScript;
     
@@ -150,18 +150,87 @@ public class SpriteSpawners : MonoBehaviour
                         //++p;
                     }
                     break;
+                    case 6:
+                     if (cSix == false)
+                    {
+                        spawnPoints[6].SetActive(true);
+                        cSixPos = spawnPoints[6].transform.position;
+                        //imageSpawnersScript.SpriteSpawn(cFivePos);
+                        cSix = true;
+
+                        SpriteSpawn(cSixPos);
+
+                        ++i;
+                        //++p;
+                    }
+                    break;
+                     case 7:
+                     if (cSeven == false)
+                    {
+                        spawnPoints[7].SetActive(true);
+                        cSevenPos = spawnPoints[7].transform.position;
+                        //imageSpawnersScript.SpriteSpawn(cFivePos);
+                        cSeven = true;
+
+                        SpriteSpawn(cSevenPos);
+
+                        ++i;
+                        //++p;
+                    }
+                    break;
+                     case 8:
+                     if (cEight == false)
+                    {
+
+                        spawnPoints[8].SetActive(true);
+                        cEightPos = spawnPoints[8].transform.position;
+                        //imageSpawnersScript.SpriteSpawn(cFivePos);
+                        cEight = true;
+
+                        SpriteSpawn(cEightPos);
+
+                        ++i;
+                        //++p;
+                    }
+                    break;
+                     case 9:
+                     if (cNine == false)
+                    {
+
+                        spawnPoints[9].SetActive(true);
+                        cNinePos = spawnPoints[9].transform.position;
+                        //imageSpawnersScript.SpriteSpawn(cFivePos);
+                        cNine = true;
+
+                        SpriteSpawn(cNinePos);
+
+                        ++i;
+                        //++p;
+                    }
+                    break;
+                    //  case 10:
+                    //  if (cTen == false)
+                    // {
+                    //     //Vector3 cFivePos;
+                    //     //int CFiveVal = 5;
+                    //     spawnPoints[10].SetActive(true);
+                    //     cSixPos = spawnPoints[10].transform.position;
+                    //     //imageSpawnersScript.SpriteSpawn(cFivePos);
+                    //     cTen = true;
+
+                    //     SpriteSpawn(cTenPos);
+
+                    //     ++i;
+                    //     //++p;
+                    // }
+                    // break; 
                   
             }
-            
-            
-            
             //Debug.Log(i);
             Debug.Log(randomSpawnPoints);
         }
         
     }
-
-
 
        public void SpriteSpawn(Vector3 pos)
     {
@@ -177,7 +246,8 @@ public class SpriteSpawners : MonoBehaviour
                     if (iZero == false)
                     {
                         Instantiate(images[0],pos, Quaternion.identity);
-                        Instantiate(images[0],activatedPos,Quaternion.identity);
+                        //GameObject zeroBox = Instantiate(images[0],activatedPos,Quaternion.identity, GameObject.FindGameObjectWithTag("Canvas").transform);
+                        //zeroBox.transform.position = activatedPos;
                         //images.RemoveAt(0);
                         
                         iZero = true;
@@ -193,7 +263,7 @@ public class SpriteSpawners : MonoBehaviour
                     if (iOne == false)
                     {
                         Instantiate(images[1],pos, Quaternion.identity);
-                        Instantiate(images[1],activatedPos,Quaternion.identity);
+                        //GameObject oneBox = Instantiate(images[1],activatedPos,Quaternion.identity, GameObject.FindGameObjectWithTag("Canvas").transform);
                         //images.RemoveAt(1);
                         iOne = true;
                         
@@ -208,7 +278,7 @@ public class SpriteSpawners : MonoBehaviour
                     if (iTwo == false)
                     {
                         Instantiate(images[2],pos, Quaternion.identity);
-                        Instantiate(images[2],activatedPos,Quaternion.identity);
+                        //GameObject twoBox = Instantiate(images[2],activatedPos,Quaternion.identity, GameObject.FindGameObjectWithTag("Canvas").transform);
                         //images.RemoveAt(2);
                         iTwo = true;
                         
@@ -223,7 +293,7 @@ public class SpriteSpawners : MonoBehaviour
                     if (iThree == false)
                     {
                         Instantiate(images[3],pos, Quaternion.identity);
-                        Instantiate(images[3],activatedPos,Quaternion.identity);
+                        //GameObject threeBox = Instantiate(images[3],activatedPos,Quaternion.identity, GameObject.FindGameObjectWithTag("Canvas").transform);
                         //images.RemoveAt(3);
                         iThree = true;
                         
@@ -238,7 +308,7 @@ public class SpriteSpawners : MonoBehaviour
                     if(iFour == false)
                     {
                         Instantiate(images[4],pos, Quaternion.identity);
-                        Instantiate(images[4],activatedPos,Quaternion.identity);
+                        //GameObject fourBox = Instantiate(images[4],activatedPos,Quaternion.identity, GameObject.FindGameObjectWithTag("Canvas").transform);
                         //images.RemoveAt(4);
                         iThree = true;
                         
@@ -253,7 +323,7 @@ public class SpriteSpawners : MonoBehaviour
                     if (iFive == false)
                     {
                         Instantiate(images[5],pos, Quaternion.identity);
-                        Instantiate(images[5],activatedPos,Quaternion.identity);
+                        //GameObject fiveBox = Instantiate(images[5],activatedPos,Quaternion.identity, GameObject.FindGameObjectWithTag("Canvas").transform);
                         //images.RemoveAt(5);
                         iFive = true;
                         

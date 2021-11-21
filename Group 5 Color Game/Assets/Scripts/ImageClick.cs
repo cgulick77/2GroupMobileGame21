@@ -25,7 +25,7 @@ public class ImageClick : MonoBehaviour
                 if (hit.collider.CompareTag("Images"))
                 {
                      //Debug.Log(hit.transform.gameObject);
-                     Destroy(hit.transform.gameObject);
+                     Destroy(hit.transform.parent.gameObject);
                 }
             }
             
