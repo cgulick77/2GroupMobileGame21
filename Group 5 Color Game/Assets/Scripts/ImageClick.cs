@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ImageClick : MonoBehaviour
 {
-    
+    private GameManager gameManagerScript;
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameManagerScript = FindObjectOfType<GameManager>();
     }
 
     // Update is called once per frame
@@ -26,6 +26,7 @@ public class ImageClick : MonoBehaviour
                 {
                      //Debug.Log(hit.transform.gameObject);
                      Destroy(hit.transform.parent.gameObject);
+                     gameManagerScript.ScoreUpdate();
                 }
             }
             

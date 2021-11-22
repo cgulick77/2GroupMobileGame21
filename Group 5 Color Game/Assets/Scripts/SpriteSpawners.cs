@@ -17,7 +17,7 @@ public class SpriteSpawners : MonoBehaviour
     void Start()
     {
        SpawnPointGeneration();
-       MenuBar();
+       //MenuBar();
        WaterSpawnGeneration();
        //SpriteSpawn(pos);
        //imageSpawnersScript = GameObject.Find("Image Sets").GetComponent<ImageSpawners>();
@@ -251,7 +251,7 @@ public class SpriteSpawners : MonoBehaviour
                      waterPoints[0].SetActive(true);
                      wZeroPos = waterPoints[0].transform.position;
                      wZero = true;
-                     WaterSpriteSpawn(cZeroPos);
+                     WaterSpriteSpawn(wZeroPos);
                      ++w;
 
                  }
@@ -516,54 +516,54 @@ public class SpriteSpawners : MonoBehaviour
         //Debug.Log(randomSpawnPoints);
         }
 
-        public void MenuBar ()
-        {
-            // Have one of the 6 be enabled
-            // Ounce a image has intantited, instantiate another on the one thats enabled.
-            // ounce the point has an image disable then set the other one enabled
-            // use int and switch statement
-            menuBox = 0;
+        // public void MenuBar ()
+        // {
+        //     // Have one of the 6 be enabled
+        //     // Ounce a image has intantited, instantiate another on the one thats enabled.
+        //     // ounce the point has an image disable then set the other one enabled
+        //     // use int and switch statement
+        //     menuBox = 0;
 
-            iconOne = menuSpawnPoints[0].transform.position;
-            iconeTwo = menuSpawnPoints[1].transform.position;
-            iconeThree = menuSpawnPoints[2].transform.position;
-            iconeFour = menuSpawnPoints[3].transform.position;
-            iconeFive = menuSpawnPoints[4].transform.position;
-            iconeSix = menuSpawnPoints[5].transform.position;
+        //     iconOne = menuSpawnPoints[0].transform.position;
+        //     iconeTwo = menuSpawnPoints[1].transform.position;
+        //     iconeThree = menuSpawnPoints[2].transform.position;
+        //     iconeFour = menuSpawnPoints[3].transform.position;
+        //     iconeFive = menuSpawnPoints[4].transform.position;
+        //     iconeSix = menuSpawnPoints[5].transform.position;
 
-            switch (menuBox)
-            {
-                case 0:
-                activatedPos = iconOne;
-                menuBox = 1;
-                break;
+        //     switch (menuBox)
+        //     {
+        //         case 0:
+        //         activatedPos = iconOne;
+        //         menuBox = 1;
+        //         break;
 
-                case 1:
-                activatedPos = iconeTwo;
-                menuBox = 2;
-                break;
+        //         case 1:
+        //         activatedPos = iconeTwo;
+        //         menuBox = 2;
+        //         break;
 
-                case 2:
-                activatedPos = iconeThree;
-                menuBox = 3;
-                break;
+        //         case 2:
+        //         activatedPos = iconeThree;
+        //         menuBox = 3;
+        //         break;
 
-                case 3:
-                activatedPos = iconeFour;
-                menuBox = 4;
-                break;
+        //         case 3:
+        //         activatedPos = iconeFour;
+        //         menuBox = 4;
+        //         break;
 
-                case 4:
-                activatedPos = iconeFive;
-                menuBox = 5;
-                break;
+        //         case 4:
+        //         activatedPos = iconeFive;
+        //         menuBox = 5;
+        //         break;
 
-                case 5:
-                activatedPos = iconeSix;
-                menuBox = 6;
-                break;
-            }
-        }
+        //         case 5:
+        //         activatedPos = iconeSix;
+        //         menuBox = 6;
+        //         break;
+        //     }
+        // }
 }
 
 
