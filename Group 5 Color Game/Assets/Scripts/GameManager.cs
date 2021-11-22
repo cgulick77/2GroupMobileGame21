@@ -38,20 +38,28 @@ public class GameManager : MonoBehaviour
 
     public void PlayButton()
     {
+        //SceneManager.LoadScene("Christian");
         Time.timeScale = 1;
         mainMenu.gameObject.SetActive(false);
+        miniMenu.gameObject.SetActive(false);
+        winScreen.gameObject.SetActive(false);
+        inGameMenu.SetActive(true);
     }
 
     public void mainMenuScreen()
     {
         mainMenu.gameObject.SetActive(true);
         winScreen.gameObject.SetActive(false);
+        miniMenu.gameObject.SetActive(false);
+        inGameMenu.SetActive(false);
+        Time.timeScale = 0;
     }
 
     public void InGameUi()
     {
         inGameMenu.SetActive(true);
         winScreen.gameObject.SetActive(false);
+        miniMenu.gameObject.SetActive(false);
         //CloseLandCreatureTab();
     }
 
@@ -59,6 +67,9 @@ public class GameManager : MonoBehaviour
     {
         winScreen.gameObject.SetActive(true);
         mainMenu.gameObject.SetActive(false);
+        miniMenu.gameObject.SetActive(false);
+        inGameMenu.SetActive(false);
+        Time.timeScale = 0;
     }
     public void quitGame ()
     {
@@ -66,6 +77,15 @@ public class GameManager : MonoBehaviour
         mainMenu.gameObject.SetActive(false);
         inGameMenu.SetActive(false);
         Application.Quit();
+    }
+    public void pauseScreen()
+    {
+        Time.timeScale = 0;
+        miniMenu.gameObject.SetActive(true);
+        winScreen.gameObject.SetActive(false);
+        mainMenu.gameObject.SetActive(false);
+        inGameMenu.SetActive(false);
+        
     }
 
 
