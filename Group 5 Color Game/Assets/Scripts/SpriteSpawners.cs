@@ -236,7 +236,7 @@ public class SpriteSpawners : MonoBehaviour
     public void WaterSpawnGeneration()
     {
         //Debug.Log("Bruh");
-        waterMaxSp = 3;
+        waterMaxSp = 4;
 
         while (w < waterMaxSp)
         {

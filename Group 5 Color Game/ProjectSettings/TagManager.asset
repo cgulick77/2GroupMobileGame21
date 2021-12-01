@@ -6,6 +6,10 @@ TagManager:
   tags:
   - Images
   - Canvas
+  - Hammer
+  - Screw
+  - Magnifiying
+  - Wrench
   layers:
   - Default
   - TransparentFX
