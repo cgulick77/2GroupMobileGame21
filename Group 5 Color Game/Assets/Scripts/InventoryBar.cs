@@ -5,33 +5,75 @@ using UnityEngine;
 public class InventoryBar : MonoBehaviour
 {
     
-    public GameObject inventoryBar, toolOne, toolTwo, toolThree, toolFour, onButton, offButton;
-    public GameObject [] toolImages;
+    public GameObject inventoryBarOn, inventoryBarOff;
+    public GameObject [] toolImagesOn, toolImagesOff;
+    private ImageClick imageClickScript;
 
     void Start()
     {
         toolBarOff();
+        ToolBarImagesOff();
+        imageClickScript = FindObjectOfType<ImageClick>();
     }
+    /* This script works by simplying setting things active or inactive. When the plyer presses a button it turns it active or inactive. Script works with the (ImageClick) script
+    to check if the player clicks on which tool and sets the toool active on the tool bar. */
 
     // Update is called once per frame
     void Update()
     {
-        // Off Y-Height: -10.9
-        // ON Y-Height: .4
+        ToolBarMenuImages();
     }
     
-    private void toolBarOn()
+    public void toolBarOn()
     {
-        onButton.SetActive(false);
-        offButton.SetActive(true);
-        inventoryBar.transform.position = new Vector3(0,.4f,0);
-
+        inventoryBarOn.SetActive(true);
+        inventoryBarOff.SetActive(false);
     }
 
-    private void toolBarOff()
+    public void toolBarOff()
     {
-        offButton.SetActive(false);
-        onButton.SetActive(true);
-        inventoryBar.transform.position = new Vector3(0,-10.9f,0);
+        inventoryBarOn.SetActive(false);
+        inventoryBarOff.SetActive(true); 
     }
+
+    public void ToolBarMenuImages()
+    {
+        if (imageClickScript.hammer == true)
+        {
+            toolImagesOn[0].SetActive(true);
+            toolImagesOff[0].SetActive(true);
+        }
+
+        if (imageClickScript.screw == true)
+        {
+             toolImagesOn[1].SetActive(true);
+            toolImagesOff[1].SetActive(true);
+        }
+
+        if (imageClickScript.magni == true)
+        {
+             toolImagesOn[2].SetActive(true);
+            toolImagesOff[2].SetActive(true);
+        }
+
+        if (imageClickScript.wrench == true)
+        {
+             toolImagesOn[3].SetActive(true);
+            toolImagesOff[3].SetActive(true);
+        }
+    }
+
+    private void ToolBarImagesOff()
+    {
+        toolImagesOn[0].SetActive(false);
+        toolImagesOff[0].SetActive(false);
+        toolImagesOn[1].SetActive(false);
+        toolImagesOff[1].SetActive(false);
+        toolImagesOn[2].SetActive(false);
+        toolImagesOff[2].SetActive(false);
+        toolImagesOn[3].SetActive(false);
+        toolImagesOff[3].SetActive(false);
+    }
+
+
 }

@@ -5,6 +5,8 @@ using UnityEngine;
 public class ImageClick : MonoBehaviour
 {
     private GameManager gameManagerScript;
+    public string colliders;
+    public bool hammer,screw,magni,wrench;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +30,32 @@ public class ImageClick : MonoBehaviour
                      Destroy(hit.transform.parent.gameObject);
                      gameManagerScript.ScoreUpdate();
                 }
+
+                if (hit.collider.CompareTag("Hammer"))
+                {
+                    Destroy(hit.transform.parent.gameObject);
+                    hammer = true;
+                }
+
+                if (hit.collider.CompareTag("Screw"))
+                {
+                    Destroy(hit.transform.parent.gameObject);
+                    screw = true;
+                }
+
+                if (hit.collider.CompareTag("Magnifiying"))
+                {
+                    Destroy(hit.transform.parent.gameObject);
+                    magni = true;
+                }
+
+                if (hit.collider.CompareTag("Wrench"))
+                {
+                    Destroy(hit.transform.parent.gameObject);
+                    wrench = true;
+                }
+
+
             }
             
         }
