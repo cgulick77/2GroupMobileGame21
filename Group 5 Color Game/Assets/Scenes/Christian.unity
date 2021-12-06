@@ -420,6 +420,7 @@ RectTransform:
   - {fileID: 1340713804}
   - {fileID: 956572568}
   - {fileID: 813396388}
+  - {fileID: 1756446568}
   m_Father: {fileID: 1864109109}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5795,7 +5796,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1626592873}
-        m_MethodName: pastTimeLine
+        m_MethodName: futureTimeLine
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5865,13 +5866,13 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1756446567}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2032816223}
   - {fileID: 1708238955}
-  m_Father: {fileID: 1864109109}
+  m_Father: {fileID: 119394790}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -6044,7 +6045,6 @@ RectTransform:
   - {fileID: 935495362}
   - {fileID: 110414950}
   - {fileID: 270612891}
-  - {fileID: 1756446568}
   m_Father: {fileID: 1027314503}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6486,6 +6486,8 @@ MonoBehaviour:
   wITwo: 0
   wIThree: 0
   wIFour: 0
+  future: {fileID: 61223312}
+  past: {fileID: 330639982}
 --- !u!4 &1983468330
 Transform:
   m_ObjectHideFlags: 0
@@ -6563,7 +6565,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1626592873}
-        m_MethodName: futureTimeLine
+        m_MethodName: pastTimeLine
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

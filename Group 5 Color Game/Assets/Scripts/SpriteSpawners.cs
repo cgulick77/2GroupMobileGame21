@@ -11,6 +11,7 @@ public class SpriteSpawners : MonoBehaviour
     public bool cZero,cOne,cTwo,cThree,cFour,cFive, cSix, cSeven, cEight, cNine, cTen, iZero,iOne,iTwo,iThree,iFour,iFive, wZero, wOne, wTwo, wThree, wFour, wFive, wSix, wSeven, wIZero, wIOne, wITwo, wIThree, wIFour;
     private Vector3 pos, waterPos, cZeroPos, cOnePos, cTwoPos, cThreePos, cFourPos, cFivePos, cSixPos, cSevenPos, cEightPos, cNinePos, cTenPos,wZeroPos, wOnePos, wTwoPos, wThreePos, wFourPos, wFivePos, wSixPos, wSevenPos, iconOne, iconeTwo, iconeThree, iconeFour, iconeFive, iconeSix, activatedPos;
     private GameObject sP, wSp, imagesP, imagesW;
+    public GameObject future, past;
     private ImageSpawners imageSpawnersScript;
 
     // Start is called before the first frame update

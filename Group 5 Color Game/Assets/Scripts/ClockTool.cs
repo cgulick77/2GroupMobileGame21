@@ -8,7 +8,7 @@ public class ClockTool : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        pastTimeLine();
+        //pastTimeLine();
     }
 
     // Update is called once per frame
@@ -22,7 +22,7 @@ public class ClockTool : MonoBehaviour
         pastTime.SetActive(true);
         futureTime.SetActive(false);
         pastClock.SetActive(false);
-        futureTime.SetActive(true);
+        futureClock.SetActive(true);
     }
 
     public void futureTimeLine()
@@ -30,7 +30,13 @@ public class ClockTool : MonoBehaviour
         pastTime.SetActive(false);
         futureTime.SetActive(true);
         pastClock.SetActive(true);
-        futureTime.SetActive(false);
+        futureClock.SetActive(false);
+        
+    }
+    
+    public void test()
+    {
+        Debug.Log("WOWOW");
     }
 
 }
