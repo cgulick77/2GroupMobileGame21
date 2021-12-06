@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1888,7 +1888,7 @@ RectTransform:
   m_GameObject: {fileID: 460785543}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 34.27497, y: 23.06914, z: 2.4756}
+  m_LocalScale: {x: 34.27497, y: 28.370428, z: 2.4756}
   m_Children: []
   m_Father: {fileID: 110414950}
   m_RootOrder: 0
@@ -2589,7 +2589,11 @@ RectTransform:
   m_GameObject: {fileID: 789457031}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
   m_LocalScale: {x: 34.274967, y: 41.04461, z: 2.4756}
+=======
+  m_LocalScale: {x: 34.274967, y: 25.754385, z: 2.4756}
+>>>>>>> Stashed changes
   m_Children: []
   m_Father: {fileID: 935495362}
   m_RootOrder: 0
@@ -3166,7 +3170,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 900761789}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.152124, y: -10.02965, z: -13.344337}
+  m_LocalPosition: {x: -9.152127, y: -10.02964, z: -13.344337}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4516,7 +4520,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 0.5625, y: 1}
+    m_SensorSize: {x: 0.47368422, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -5964,7 +5968,11 @@ RectTransform:
   m_GameObject: {fileID: 1822134396}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
+<<<<<<< Updated upstream
   m_LocalScale: {x: 34.27497, y: 39.84963, z: 2.4756}
+=======
+  m_LocalScale: {x: 34.27497, y: 26.005842, z: 2.4756}
+>>>>>>> Stashed changes
   m_Children: []
   m_Father: {fileID: 270612891}
   m_RootOrder: 0
