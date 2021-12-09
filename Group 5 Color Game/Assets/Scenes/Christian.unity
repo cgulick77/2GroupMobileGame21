@@ -333,7 +333,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &61223313
 Transform:
   m_ObjectHideFlags: 0
@@ -1570,7 +1570,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &330639983
 Transform:
   m_ObjectHideFlags: 0
@@ -2672,6 +2672,8 @@ MonoBehaviour:
   randomSpawnPoints: 0
   randomWaterSpawnPoints: 0
   menuBox: 0
+  SpawnerOneActive: 0
+  SpawnerTwoActive: 1
   cZero: 0
   cOne: 0
   cTwo: 0
@@ -6596,15 +6598,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  waterPoints:
-  - {fileID: 433596068}
-  - {fileID: 1966011049}
-  - {fileID: 274818161}
-  - {fileID: 2090875710}
-  - {fileID: 586571576}
-  - {fileID: 1707204455}
-  - {fileID: 1673614610}
-  - {fileID: 1472930812}
+  waterPoints: []
   images:
   - {fileID: 7739329413351828441, guid: 004a4aa1791da3547b02ea23c9fdb541, type: 3}
   - {fileID: 8345830576256492544, guid: 9f732e815df349940a6ecd75a4945b62, type: 3}
@@ -6612,11 +6606,7 @@ MonoBehaviour:
   - {fileID: 3101055500015142179, guid: d0fc2a6b2119d934abb115172193f813, type: 3}
   - {fileID: 4271566469680107118, guid: b2cacea5418eed44482bce9b8cba55db, type: 3}
   - {fileID: 1737985742876425117, guid: dc3359187145ff34ab3585ce4fd821f8, type: 3}
-  waterImages:
-  - {fileID: 6592088922146598570, guid: 3edd741e5b5165548b907940bf076d2f, type: 3}
-  - {fileID: 2620557482862885506, guid: efd404181a0f5ed46a1fad3f78b5889a, type: 3}
-  - {fileID: 8804739920293608205, guid: f936012d5cc2f9845be30ebad74eb998, type: 3}
-  - {fileID: 2724626183895783605, guid: 9a16b8b8426afcd4e984b25069512cba, type: 3}
+  waterImages: []
   numbers: 
   maxSpawnPoints: 4
   waterMaxSp: 0
@@ -6627,6 +6617,8 @@ MonoBehaviour:
   randomSpawnPoints: 0
   randomWaterSpawnPoints: 0
   menuBox: 0
+  SpawnerOneActive: 0
+  SpawnerTwoActive: 0
   cZero: 0
   cOne: 0
   cTwo: 0

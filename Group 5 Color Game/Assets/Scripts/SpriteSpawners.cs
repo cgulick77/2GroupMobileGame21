@@ -8,7 +8,7 @@ public class SpriteSpawners : MonoBehaviour
     public List<GameObject>  images, waterImages;
     public List<int> numbers;
     public int maxSpawnPoints, waterMaxSp, selectedSp, i, w, selectedImages, randomSpawnPoints, randomWaterSpawnPoints, menuBox;
-    public bool cZero,cOne,cTwo,cThree,cFour,cFive, cSix, cSeven, cEight, cNine, cTen, iZero,iOne,iTwo,iThree,iFour,iFive, wZero, wOne, wTwo, wThree, wFour, wFive, wSix, wSeven, wIZero, wIOne, wITwo, wIThree, wIFour;
+    public bool SpawnerOneActive, SpawnerTwoActive, cZero,cOne,cTwo,cThree,cFour,cFive, cSix, cSeven, cEight, cNine, cTen, iZero,iOne,iTwo,iThree,iFour,iFive, wZero, wOne, wTwo, wThree, wFour, wFive, wSix, wSeven, wIZero, wIOne, wITwo, wIThree, wIFour;
     private Vector3 pos, waterPos, cZeroPos, cOnePos, cTwoPos, cThreePos, cFourPos, cFivePos, cSixPos, cSevenPos, cEightPos, cNinePos, cTenPos,wZeroPos, wOnePos, wTwoPos, wThreePos, wFourPos, wFivePos, wSixPos, wSevenPos, iconOne, iconeTwo, iconeThree, iconeFour, iconeFive, iconeSix, activatedPos;
     private GameObject sP, wSp, imagesP, imagesW;
     private ImageSpawners imageSpawnersScript;
@@ -16,9 +16,17 @@ public class SpriteSpawners : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       //SpawnPointGeneration();
+        if (SpawnerOneActive == true)
+        {
+             SpawnPointGeneration();
+        }
+
+        if (SpawnerTwoActive == true)
+        {
+            WaterSpawnGeneration();
+        }
+      
        //MenuBar();
-       WaterSpawnGeneration();
        //SpriteSpawn(pos);
        //imageSpawnersScript = GameObject.Find("Image Sets").GetComponent<ImageSpawners>();
         //activatedPos = iconOne;
@@ -354,6 +362,7 @@ public class SpriteSpawners : MonoBehaviour
             {
                 Instantiate(waterImages[0],waterPos, Quaternion.identity);
                 wIZero = true;
+                waterImages[0].transform.SetParent(null);
             }
             else
             {
