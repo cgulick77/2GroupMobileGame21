@@ -2,25 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class ClockTool : MonoBehaviour
 {
     public GameObject pastTime, futureTime, pastClock, futureClock;
+    public Text timeText;
     public GameObject [] tools;
-    private float imageOnZ, imageOffZ;
+    private float imageOnZ, imageOffZ, startTime = 150f, currentTime = 0f;
     public Transform [] toolsChild;
     public int i;
     private bool future,past;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        pastTimeLine();
+        futureTimeLine();
+        
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         tools = GameObject.FindGameObjectsWithTag("Tool");
+
+        if (past == true)
+        {
+            currentTime -= 1 *Time.deltaTime;
+            timeText.text = currentTime.ToString("0");
+
+            if (currentTime <= 0)
+            {
+                currentTime = 0;
+            }
+        }
     }
 
     public void pastTimeLine ()
@@ -29,11 +46,12 @@ public class ClockTool : MonoBehaviour
         futureTime.SetActive(false);
         pastClock.SetActive(false);
         futureClock.SetActive(true);
-        ToolsToogle(true);
 
         //Checks what time line is currently active
         past = true;
         future = false;
+
+        currentTime = startTime;
     }
 
     public void futureTimeLine()
@@ -42,7 +60,7 @@ public class ClockTool : MonoBehaviour
         futureTime.SetActive(true);
         pastClock.SetActive(true);
         futureClock.SetActive(false);
-        ToolsToogle(false);
+        
         
 
         //Checks what time line is currently active
@@ -59,29 +77,29 @@ public class ClockTool : MonoBehaviour
         if (toogle == true)
         {
         //    int i = 0;
-           Debug.Log("TRue");
+           
             for (i = 0; i <tools.Length; ++i)
             {
                 tools[i].SetActive(true);
                 // tools[i].transform.position = new Vector3(transform.position.x, transform.position.y, imageOffZ);
                 // toolsChild[i] = tools[i].gameObject.transform.GetChild(0);
                 // toolsChild[i].gameObject.GetComponentInChildren<SpriteRenderer>().enabled = true;
-
+                Debug.Log("ADQEWD");
             }
             
         }
 
         if (toogle == false)
         {
-            Debug.Log("FAlse");
+            
             int m;
-             for (i = 0; i <toolsChild.Length; ++i)
+             for (m = 0; m <tools.Length; ++m)
             {
-                tools[i].SetActive(false);
+                tools[m].SetActive(false);
                 // tools[i].transform.position = new Vector3(transform.position.x, transform.position.y, imageOnZ);
                 // toolsChild[m] = tools[m].gameObject.transform.GetChild(0);
                 // toolsChild[m].gameObject.GetComponentInChildren<SpriteRenderer>().enabled = false;
-                
+                Debug.Log("FAFAF");
             }
 
             // int m;

@@ -363,6 +363,7 @@ public class SpriteSpawners : MonoBehaviour
             {
                 Instantiate(waterImages[0],waterPos, Quaternion.identity);
                 wIZero = true;
+                
             }
             else
             {
@@ -374,6 +375,7 @@ public class SpriteSpawners : MonoBehaviour
             {
                 Instantiate(waterImages[1],waterPos, Quaternion.identity);
                 wIOne = true;
+                
             }
              else
             {
@@ -385,6 +387,7 @@ public class SpriteSpawners : MonoBehaviour
             {
                 Instantiate(waterImages[2],waterPos, Quaternion.identity);
                 wITwo = true;
+                
             }
              else
             {
@@ -396,6 +399,7 @@ public class SpriteSpawners : MonoBehaviour
             {
                 Instantiate(waterImages[3],waterPos, Quaternion.identity);
                 wIThree = true;
+                
             }
              else
             {
@@ -407,6 +411,7 @@ public class SpriteSpawners : MonoBehaviour
             {
                 Instantiate(waterImages[4],waterPos, Quaternion.identity);
                 wIFour = true;
+                
             }
              else
             {
