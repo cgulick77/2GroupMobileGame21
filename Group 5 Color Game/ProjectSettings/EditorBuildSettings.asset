@@ -4,5 +4,14 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Christian.unity
+    guid: 0a4045d0cc8afed429bbec6b172c305b
+  - enabled: 1
+    path: Assets/Scenes/Past(Test).unity
+    guid: 14c5e2f1d79547747abc5527733afea6
+  - enabled: 1
+    path: Assets/Scenes/Future(Future).unity
+    guid: e973a2c172c35e34dab6a63dfdefa3d2
   m_configObjects: {}

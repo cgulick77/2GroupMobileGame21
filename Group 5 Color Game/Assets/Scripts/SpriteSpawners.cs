@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SpriteSpawners : MonoBehaviour
 {
@@ -362,7 +363,6 @@ public class SpriteSpawners : MonoBehaviour
             {
                 Instantiate(waterImages[0],waterPos, Quaternion.identity);
                 wIZero = true;
-                waterImages[0].transform.SetParent(null);
             }
             else
             {
