@@ -4,22 +4,28 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public static AudioClip backGroundMusic;
-    static AudioSource audioSource;
+    public AudioSource pastAudio, futureAudio;
+    public ClockTool clockToolScript;
+    
     void Start()
     {
-        backGroundMusic = Resources.Load<AudioClip>("bgm");
+        clockToolScript = FindObjectOfType<ClockTool>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (clockToolScript.past)
+        {
+            pastAudio.enabled = true;
+            futureAudio.enabled = false;
+        }
+        else 
+        {
+            pastAudio.enabled = false;
+            futureAudio.enabled = true;
+        }
     }
 
-    public static void PlaySound()
-    {
-        audioSource.PlayOneShot(backGroundMusic);
-    }
+   
 }

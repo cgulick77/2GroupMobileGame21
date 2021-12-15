@@ -6,11 +6,23 @@ TagManager:
   tags:
   - Images
   - Canvas
-  - Hammer
-  - Screw
-  - Magnifiying
-  - Wrench
   - Tool
+  - Scissors
+  - Cuffs
+  - Spray
+  - Harpoon
+  - Book
+  - Demon
+  - Ghost
+  - Mk
+  - Mummy
+  - Octo
+  - Siren
+  - Spider
+  - Vamp
+  - WereWolf
+  - Witch
+  - Monsters
   layers:
   - Default
   - TransparentFX

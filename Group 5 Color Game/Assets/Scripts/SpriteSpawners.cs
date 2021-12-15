@@ -9,7 +9,7 @@ public class SpriteSpawners : MonoBehaviour
     public List<GameObject>  images, waterImages;
     public List<int> numbers;
     public int maxSpawnPoints, waterMaxSp, selectedSp, i, w, selectedImages, randomSpawnPoints, randomWaterSpawnPoints, menuBox;
-    public bool SpawnerOneActive, SpawnerTwoActive, cZero,cOne,cTwo,cThree,cFour,cFive, cSix, cSeven, cEight, cNine, cTen, iZero,iOne,iTwo,iThree,iFour,iFive, wZero, wOne, wTwo, wThree, wFour, wFive, wSix, wSeven, wIZero, wIOne, wITwo, wIThree, wIFour;
+    public bool SpawnerOneActive, SpawnerTwoActive, cZero,cOne,cTwo,cThree,cFour,cFive, cSix, cSeven, cEight, cNine, cTen, iZero,iOne,iTwo,iThree,iFour,iFive,iSix,iSeven,iEight,iNine, wZero, wOne, wTwo, wThree, wFour, wFive, wSix, wSeven, wIZero, wIOne, wITwo, wIThree, wIFour;
     private Vector3 pos, waterPos, cZeroPos, cOnePos, cTwoPos, cThreePos, cFourPos, cFivePos, cSixPos, cSevenPos, cEightPos, cNinePos, cTenPos,wZeroPos, wOnePos, wTwoPos, wThreePos, wFourPos, wFivePos, wSixPos, wSevenPos, iconOne, iconeTwo, iconeThree, iconeFour, iconeFive, iconeSix, activatedPos;
     private GameObject sP, wSp, imagesP, imagesW;
     private ImageSpawners imageSpawnersScript;
@@ -245,7 +245,7 @@ public class SpriteSpawners : MonoBehaviour
     public void WaterSpawnGeneration()
     {
         //Debug.Log("Bruh");
-        waterMaxSp = 4;
+        waterMaxSp = 5;
 
         while (w < waterMaxSp)
         {
@@ -512,9 +512,59 @@ public class SpriteSpawners : MonoBehaviour
                     if (iFive == false)
                     {
                         Instantiate(images[5],pos, Quaternion.identity);
-                        //GameObject fiveBox = Instantiate(images[5],activatedPos,Quaternion.identity, GameObject.FindGameObjectWithTag("Canvas").transform);
-                        //images.RemoveAt(5);
                         iFive = true;
+
+                        //++p;
+                    }
+                    else
+                    {
+                          SpriteSpawn(pos);
+                    }
+                        break;
+                    case 6:
+                    if (iSix == false)
+                    {
+                        Instantiate(images[6],pos, Quaternion.identity);
+                        iSix = true;
+
+                        //++p;
+                    }
+                    else
+                    {
+                          SpriteSpawn(pos);
+                    }
+                        break;
+                    case 7:
+                    if (iSeven == false)
+                    {
+                        Instantiate(images[7],pos, Quaternion.identity);
+                        iSeven = true;
+
+                        //++p;
+                    }
+                    else
+                    {
+                          SpriteSpawn(pos);
+                    }
+                        break;
+                    case 8:
+                    if (iEight == false)
+                    {
+                        Instantiate(images[8],pos, Quaternion.identity);
+                        iEight = true;
+
+                        //++p;
+                    }
+                    else
+                    {
+                          SpriteSpawn(pos);
+                    }
+                        break;
+                    case 9:
+                    if (iNine == false)
+                    {
+                        Instantiate(images[9],pos, Quaternion.identity);
+                        iNine = true;
 
                         //++p;
                     }

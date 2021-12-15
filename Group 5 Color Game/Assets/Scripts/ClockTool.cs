@@ -6,19 +6,24 @@ using UnityEngine.UI;
 
 public class ClockTool : MonoBehaviour
 {
+    private GameManager gameManagerScript;
+
     public GameObject pastTime, futureTime, pastClock, futureClock;
     public Text timeText;
-    public GameObject [] tools;
-    private float imageOnZ, imageOffZ, startTime = 150f, currentTime = 0f;
+    public GameObject [] tools, monsters;
+    private float imageOnZ, imageOffZ, startTime, currentTime, monsterOnZ, monsterOffZ, pausedTime;
     public Transform [] toolsChild;
     public int i;
-    private bool future,past;
+    public bool future,past;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        futureTimeLine();
+        gameManagerScript = FindObjectOfType<GameManager>();
+        pastTimeLine();
+        startTime = 100f;
+        currentTime = startTime;
         
         
     }
@@ -27,6 +32,7 @@ public class ClockTool : MonoBehaviour
     void Update()
     {
         tools = GameObject.FindGameObjectsWithTag("Tool");
+        monsters = GameObject.FindGameObjectsWithTag("Monsters");
 
         if (past == true)
         {
@@ -36,8 +42,16 @@ public class ClockTool : MonoBehaviour
             if (currentTime <= 0)
             {
                 currentTime = 0;
+                gameManagerScript.FailGame();
             }
         }
+
+        if (past == false)
+        {
+            startTime = currentTime;
+        }
+
+
     }
 
     public void pastTimeLine ()
@@ -46,12 +60,13 @@ public class ClockTool : MonoBehaviour
         futureTime.SetActive(false);
         pastClock.SetActive(false);
         futureClock.SetActive(true);
+        ToolsToogle(false);
+        MonstersToogle(true);
 
         //Checks what time line is currently active
         past = true;
         future = false;
 
-        currentTime = startTime;
     }
 
     public void futureTimeLine()
@@ -60,6 +75,9 @@ public class ClockTool : MonoBehaviour
         futureTime.SetActive(true);
         pastClock.SetActive(true);
         futureClock.SetActive(false);
+        ToolsToogle(true);
+        MonstersToogle(false);
+        
         
         
 
@@ -69,10 +87,10 @@ public class ClockTool : MonoBehaviour
         
     }
 
-    public void ToolsToogle (bool toogle)
+    public void ToolsToogle (bool toogle) // Toggles tools On if past is laoded, toggles tools off if future is loaded
     {
-        imageOnZ = -1.378036f;
-        imageOffZ = 0.0f;
+        imageOnZ = -1.378036f; // Posiiton for tools visible on scene
+        imageOffZ = 0.2f; // Posiiton for tools to be invisible on scene
 
         if (toogle == true)
         {
@@ -80,11 +98,10 @@ public class ClockTool : MonoBehaviour
            
             for (i = 0; i <tools.Length; ++i)
             {
-                tools[i].SetActive(true);
-                // tools[i].transform.position = new Vector3(transform.position.x, transform.position.y, imageOffZ);
-                // toolsChild[i] = tools[i].gameObject.transform.GetChild(0);
-                // toolsChild[i].gameObject.GetComponentInChildren<SpriteRenderer>().enabled = true;
-                Debug.Log("ADQEWD");
+                
+                Vector3 toolCurrentPos;
+                toolCurrentPos = tools[i].transform.position;
+                tools[i].transform.position = new Vector3(toolCurrentPos.x, toolCurrentPos.y, imageOffZ);
             }
             
         }
@@ -95,25 +112,40 @@ public class ClockTool : MonoBehaviour
             int m;
              for (m = 0; m <tools.Length; ++m)
             {
-                tools[m].SetActive(false);
-                // tools[i].transform.position = new Vector3(transform.position.x, transform.position.y, imageOnZ);
-                // toolsChild[m] = tools[m].gameObject.transform.GetChild(0);
-                // toolsChild[m].gameObject.GetComponentInChildren<SpriteRenderer>().enabled = false;
-                Debug.Log("FAFAF");
+                Vector3 toolCurrentPos;
+                toolCurrentPos = tools[m].transform.position;
+                tools[m].transform.position = new Vector3(toolCurrentPos.x, toolCurrentPos.y, imageOnZ);
             }
-
-            // int m;
-            // for (m = 0; m <tools.Length; ++m)
-            // {
-            //    toolsChild[m] = tools[m].gameObject.transform.GetChild(0);
-            //     toolsChild[m].gameObject.GetComponentInChildren<SpriteRenderer>().enabled = false;
-            // }
         }
     }
 
-        public void test()
+    public void MonstersToogle (bool mToogle)
     {
-        Debug.Log("WOWOW");
+        monsterOffZ = 1.5f;
+        monsterOnZ = -0.6999969f;
+        if (mToogle == true)
+        {
+
+            int k;
+            for (k = 0; k <monsters.Length; ++k)
+            {
+                Vector3 monstersCurrentPos;
+                monstersCurrentPos = monsters[k].transform.position;
+                monsters[k].transform.position = new Vector3(monstersCurrentPos.x, monstersCurrentPos.y, monsterOffZ);
+            }
+        }
+
+        if (mToogle == false)
+        {
+             int b;
+            for (b = 0; b <monsters.Length; ++b)
+            {
+                Vector3 monstersCurrentPos;
+                monstersCurrentPos = monsters[b].transform.position;
+                monsters[b].transform.position = new Vector3(monstersCurrentPos.x, monstersCurrentPos.y, monsterOnZ);
+            }
+        }
     }
+    
 
 }

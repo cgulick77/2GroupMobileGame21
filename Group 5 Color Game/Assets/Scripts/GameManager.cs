@@ -12,7 +12,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     
-    public GameObject mainMenu, landCreaturesTab, landCreatureTabClose, winScreen, waterCreatureTab, waterCreatureTabClosed, miniMenu, inGameMenu, monstersTab;
+    public GameObject mainMenu, landCreaturesTab, landCreatureTabClose, winScreen, waterCreatureTab, waterCreatureTabClosed, miniMenu, inGameMenu, monstersTab, pauseMenu, failMenu;
     private bool landTabOpen, waterTabOpen;
     public int monsters;
      public TextMeshProUGUI monsterText;
@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         CloseLandCreatureTab();
-        monsters = 7;
+        monsters = 4;
         mainMenuScreen();
         ScoreStart();
 
@@ -52,6 +52,7 @@ public class GameManager : MonoBehaviour
         winScreen.gameObject.SetActive(false);
         miniMenu.gameObject.SetActive(false);
         inGameMenu.SetActive(false);
+        failMenu.SetActive(false);
         Time.timeScale = 0;
     }
 
@@ -60,6 +61,7 @@ public class GameManager : MonoBehaviour
         inGameMenu.SetActive(true);
         winScreen.gameObject.SetActive(false);
         miniMenu.gameObject.SetActive(false);
+        failMenu.SetActive(false);
         //CloseLandCreatureTab();
     }
 
@@ -69,14 +71,16 @@ public class GameManager : MonoBehaviour
         mainMenu.gameObject.SetActive(false);
         miniMenu.gameObject.SetActive(false);
         inGameMenu.SetActive(false);
+        failMenu.SetActive(false);
         Time.timeScale = 0;
     }
-    public void quitGame ()
+    public void FailGame ()
     {
         winScreen.gameObject.SetActive(false);
         mainMenu.gameObject.SetActive(false);
         inGameMenu.SetActive(false);
-        Application.Quit();
+        failMenu.SetActive(true);
+        Time.timeScale = 0;
     }
     public void pauseScreen()
     {
@@ -85,6 +89,7 @@ public class GameManager : MonoBehaviour
         winScreen.gameObject.SetActive(false);
         mainMenu.gameObject.SetActive(false);
         inGameMenu.SetActive(false);
+        pauseMenu.SetActive(true);
         
     }
 

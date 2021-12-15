@@ -38,28 +38,34 @@ public class InventoryBar : MonoBehaviour
 
     public void ToolBarMenuImages()
     {
-        if (imageClickScript.hammer == true)
+        if (imageClickScript.scissors == true)
         {
             toolImagesOn[0].SetActive(true);
             toolImagesOff[0].SetActive(true);
         }
 
-        if (imageClickScript.screw == true)
+        if (imageClickScript.harpoon == true)
         {
              toolImagesOn[1].SetActive(true);
             toolImagesOff[1].SetActive(true);
         }
 
-        if (imageClickScript.magni == true)
+        if (imageClickScript.spray == true)
         {
              toolImagesOn[2].SetActive(true);
             toolImagesOff[2].SetActive(true);
         }
 
-        if (imageClickScript.wrench == true)
+        if (imageClickScript.cuffs == true)
         {
              toolImagesOn[3].SetActive(true);
             toolImagesOff[3].SetActive(true);
+        }
+
+        if (imageClickScript.book == true)
+        {
+            toolImagesOn[4].SetActive(true);
+            toolImagesOff[4].SetActive(true);
         }
     }
 
@@ -73,6 +79,8 @@ public class InventoryBar : MonoBehaviour
         toolImagesOff[2].SetActive(false);
         toolImagesOn[3].SetActive(false);
         toolImagesOff[3].SetActive(false);
+        toolImagesOn[4].SetActive(false);
+        toolImagesOff[4].SetActive(false);
     }
 
 
