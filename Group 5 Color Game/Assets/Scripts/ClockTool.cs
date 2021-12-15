@@ -21,8 +21,8 @@ public class ClockTool : MonoBehaviour
     void Start()
     {
         gameManagerScript = FindObjectOfType<GameManager>();
-        pastTimeLine();
-        startTime = 100f;
+        futureTimeLine();
+        startTime = 120f;
         currentTime = startTime;
         
         

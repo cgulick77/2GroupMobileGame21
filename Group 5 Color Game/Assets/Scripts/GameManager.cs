@@ -38,12 +38,12 @@ public class GameManager : MonoBehaviour
 
     public void PlayButton()
     {
-        //SceneManager.LoadScene("Christian");
-        Time.timeScale = 1;
+        // SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         mainMenu.gameObject.SetActive(false);
         miniMenu.gameObject.SetActive(false);
         winScreen.gameObject.SetActive(false);
         inGameMenu.SetActive(true);
+        Time.timeScale = 1;
     }
 
     public void mainMenuScreen()
@@ -91,6 +91,11 @@ public class GameManager : MonoBehaviour
         inGameMenu.SetActive(false);
         pauseMenu.SetActive(true);
         
+    }
+
+    public void newGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
 
